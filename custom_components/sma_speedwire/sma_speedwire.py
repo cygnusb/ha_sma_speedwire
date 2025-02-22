@@ -184,8 +184,8 @@ class SMA_SPEEDWIRE:
         self.my_id = MY_SYSTEMID.to_bytes(2, byteorder='little') + MY_SERIAL.to_bytes(4, byteorder='little')
         self.target_id = ANY_SYSTEMID.to_bytes(2, byteorder='little') + ANY_SERIAL.to_bytes(4, byteorder='little')
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.sock.settimeout(10.0)
-        self.retry = 5
+        self.sock.settimeout(3.0)
+        self.retry = 2
 
         self.serial = None
         self.inv_class = None
